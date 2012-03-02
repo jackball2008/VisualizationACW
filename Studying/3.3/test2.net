@@ -1,5 +1,5 @@
 //
-// time: Fri Mar  2 10:48:22 2012
+// time: Fri Mar  2 12:45:05 2012
 //
 // version: 3.2.0 (format), 4.4.4 (DX)
 //
@@ -12,7 +12,7 @@
 // page assignment: group	order=4, windowed=0, showing=0
 // page assignment: import	order=2, windowed=0, showing=1
 // page assignment: run_net	order=7, windowed=0, showing=0
-// workspace: width = 474, height = 481
+// workspace: width = 474, height = 431
 // layout: snap = 0, width = 25, height = 25, align = NN
 //
 macro main(
@@ -44,7 +44,7 @@ main_Import_1_out_1[cache: 0] =
     main_Import_1_in_6
     ) [instance: 1, cache: 1];
     // 
-    // node Transmitter[1]: x = 81, y = 422, inputs = 1, label = imported_data
+    // node Transmitter[1]: x = 83, y = 372, inputs = 1, label = imported_data
     // page group: import
     //
 imported_data = main_Import_1_out_1;
@@ -437,10 +437,9 @@ main_Format_1_out_1 =
     main_Format_1_out_1
     ) [instance: 1, cache: 1];
     //
-    // decorator Annotate	pos=(0,25) size=474x51 style(Label), value = <NULL>
-    // annotation user_begin: 130
+    // decorator Annotate	pos=(0,25) size=474x38 style(Label), value = <NULL>
+    // annotation user_begin: 67
     // annotation user: <NULL>
-    // annotation user: flag which is either 1 or 2 which says to Describe the data or
     // annotation user: return  a  net  name   to   run  in  order to  visualize the data.
     // annotation user_end: <NULL>
     // page group: import
