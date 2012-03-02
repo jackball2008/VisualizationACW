@@ -1,0 +1,7 @@
+Starting DX executive
+Memory cache will use 126 MB (8 for small items, 118 for large)
+port = 1900
+server: accepted connection from client
+ 0:  worker here [3626] 
+Begin Execution
+ERROR: Import:  Missing data: Reached end-of-file '/home/user/Workspace/VisualizationACW/Studying/3.3/spreadsheet.data'  /  Reading Field 'locations', Datum 40, Component 2

@@ -1,0 +1,9 @@
+file = /home/user/Workspace/VisualizationACW/Studying/3.3/spreadsheet.data
+points = 49
+format = ascii
+interleaving = field
+field = locations, field0, field1
+structure = 3-vector, scalar, scalar
+type = float, float, float
+
+end
