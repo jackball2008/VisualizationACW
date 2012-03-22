@@ -1,0 +1,13 @@
+file = E:/Workspace/VisualizationACW/PotentialEnergySurface/potenh3.data
+grid = 71 x 71
+format = ascii
+interleaving = record
+majority = column
+header = lines 2
+field = field0
+structure = scalar
+type = int
+dependency = positions
+positions = regular, regular, 0, 1, 0, 1
+
+end
