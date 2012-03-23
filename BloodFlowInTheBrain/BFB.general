@@ -1,0 +1,13 @@
+file = e:/workspace/VisualizationACW/BloodFlowInTheBrain/brain.data
+grid = 72 x 82
+format = ascii
+interleaving = record
+majority = column
+header = lines 3
+field = CT, SP
+structure = scalar, scalar
+type = int, int
+dependency = positions, positions
+positions = regular, regular, 0, 1, 0, 1
+
+end
