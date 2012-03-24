@@ -1,0 +1,13 @@
+file = D:/workspace/VisualizationACW/3/dglazing.data
+grid = 18 x 18 x 18
+format = ascii
+interleaving = record-vector
+majority = column
+header = lines 3
+field = F, T, P
+structure = 3-vector, scalar, scalar
+type = float, float, float
+dependency = positions, positions, positions
+positions = regular, regular, regular, 0, 1, 0, 1, 0, 1
+
+end

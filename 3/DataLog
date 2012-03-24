@@ -1,0 +1,22 @@
+Starting DX executive
+Memory cache will use 1112 MB (68 for small items, 1044 for large)
+Begin Execution
+ 0:  worker here [6076] 
+Object Description:
+Input object is a Group which contains 3 members.
+ member 0 is named F
+ member 1 is named T
+ member 2 is named P
+Each group member is a Field, the basic data carrying structure in DX.
+The positions are enclosed within the box defined by the corner points:
+[ 0 0 0 ] and [ 17 17 17 ]
+Data range is:
+minimum = -0.370528, maximum = 1.00215, average = 0.18621
+Begin Execution
+(These are the scalar statistics which will be used by modules
+which need scalar values.  The length is computed for vectors and
+the determinant for matricies.)
+Input is not ready to be rendered because 3 Fields in the Input object do not have colors yet.
+Use the `AutoColor', `AutoGreyScale', or `Color' modules to add colors.
+
+ECHO:  
