@@ -1,18 +1,18 @@
 //
-// time: Sat Mar 24 23:43:35 2012
+// time: Sun Mar 25 00:00:03 2012
 //
 // version: 3.2.0 (format), 4.4.4 (DX)
 //
 //
 // MODULE main
-// workspace: width = 685, height = 613
+// workspace: width = 1008, height = 613
 // layout: snap = 0, width = 50, height = 50, align = NN
 //
 macro main(
 ) -> (
 ) {
     // 
-    // node AutoColor[1]: x = 568, y = 261, inputs = 10, label = AutoColor
+    // node AutoColor[1]: x = 737, y = 268, inputs = 10, label = AutoColor
     //
 main_AutoColor_1_out_1,
 main_AutoColor_1_out_2 = 
@@ -45,7 +45,7 @@ main_Import_1_out_1 =
     main_Import_1_in_6
     ) [instance: 1, cache: 1];
     // 
-    // node Sample[1]: x = 65, y = 279, inputs = 2, label = Sample
+    // node Sample[1]: x = 45, y = 217, inputs = 2, label = Sample
     // input[2]: defaulting = 1, visible = 1, type = 1, value = 300
     //
 main_Sample_1_out_1 = 
@@ -85,15 +85,37 @@ main_Collect_1_out_1 =
     main_ShowBox_1_out_1
     ) [instance: 1, cache: 1];
     // 
+    // node Mark[1]: x = 871, y = 44, inputs = 2, label = Mark
+    // input[2]: defaulting = 0, visible = 1, type = 32, value = "positions"
+    //
+main_Mark_1_out_1 = 
+    Mark(
+    main_Mark_1_in_1,
+    main_Mark_1_in_2
+    ) [instance: 1, cache: 1];
+    // 
+    // node Compute[1]: x = 939, y = 96, inputs = 3, label = Compute
+    // input[1]: defaulting = 0, visible = 0, type = 32, value = "$0-0.5*$1"
+    // expression: value = a-0.5*b
+    // name[2]: value = a
+    // name[3]: value = b
+    //
+main_Compute_1_out_1 = 
+    Compute(
+    main_Compute_1_in_1,
+    main_Mark_1_out_1,
+    main_Mark_1_out_1
+    ) [instance: 1, cache: 1];
+    // 
     // node Image[1]: x = 250, y = 551, inputs = 49, label = Image
     // input[1]: defaulting = 0, visible = 0, type = 67108863, value = "Image_1"
     // input[4]: defaulting = 0, visible = 0, type = 1, value = 1
     // input[5]: defaulting = 0, visible = 0, type = 8, value = [8.5 8.5 8.5]
-    // input[6]: defaulting = 0, visible = 0, type = 8, value = [-33.824 27.7139 66.0709]
+    // input[6]: defaulting = 0, visible = 0, type = 8, value = [-36.1815 48.872 51.495]
     // input[7]: defaulting = 0, visible = 0, type = 5, value = 39.6524
     // input[8]: defaulting = 0, visible = 0, type = 1, value = 640
     // input[9]: defaulting = 0, visible = 0, type = 5, value = 0.751
-    // input[10]: defaulting = 0, visible = 0, type = 8, value = [0.273409 0.95468 -0.117618]
+    // input[10]: defaulting = 0, visible = 0, type = 8, value = [0.340733 0.83573 -0.430647]
     // input[11]: defaulting = 1, visible = 0, type = 5, value = 29.9999
     // input[12]: defaulting = 0, visible = 0, type = 1, value = 0
     // input[14]: defaulting = 0, visible = 0, type = 1, value = 1
@@ -105,7 +127,7 @@ main_Collect_1_out_1 =
     // input[29]: defaulting = 0, visible = 0, type = 3, value = 0
     // input[41]: defaulting = 0, visible = 0, type = 32, value = "rotate"
     // depth: value = 24
-    // window: position = (0.5706,0.1023), size = 0.4087x0.6070
+    // window: position = (0.4881,0.1047), size = 0.4087x0.6070
     // internal caching: 1
     //
 main_Image_1_out_1,
@@ -213,7 +235,7 @@ main_Isosurface_1_out_1 =
     main_Isosurface_1_in_6
     ) [instance: 1, cache: 1];
     // 
-    // node Map[1]: x = 591, y = 176, inputs = 4, label = Map
+    // node Map[1]: x = 760, y = 183, inputs = 4, label = Map
     //
 main_Map_1_out_1 = 
     Map(
@@ -223,7 +245,23 @@ main_Map_1_out_1 =
     main_Map_1_in_4
     ) [instance: 1, cache: 1];
     // 
-    // node Print[2]: x = 592, y = 428, inputs = 3, label = Print
+    // node Pick[1]: x = 771, y = 40, inputs = 9, label = Pick_1
+    // input[1]: defaulting = 0, visible = 0, type = 32, value = "Pick_1"
+    //
+main_Pick_1_out_1 = 
+    Pick(
+    main_Pick_1_in_1,
+    main_Pick_1_in_2,
+    main_Pick_1_in_3,
+    main_Pick_1_in_4,
+    main_Pick_1_in_5,
+    main_Pick_1_in_6,
+    main_Pick_1_in_7,
+    main_Pick_1_in_8,
+    main_Pick_1_in_9
+    ) [instance: 1, cache: 1];
+    // 
+    // node Print[2]: x = 761, y = 435, inputs = 3, label = Print
     // input[2]: defaulting = 0, visible = 1, type = 32, value = "rd"
     //
     Print(
@@ -232,7 +270,7 @@ main_Map_1_out_1 =
     main_Print_2_in_3
     ) [instance: 2, cache: 1];
     // 
-    // node Scalar[2]: x = 590, y = 108, inputs = 11, label = Scalar
+    // node Scalar[2]: x = 759, y = 115, inputs = 11, label = Scalar
     // input[1]: defaulting = 0, visible = 0, type = 32, value = "Scalar_2"
     // input[3]: defaulting = 0, visible = 0, type = 5, value = 0.3466765
     // input[5]: defaulting = 1, visible = 0, type = 5, value = -0.306647
@@ -242,7 +280,7 @@ main_Map_1_out_1 =
     // output[1]: visible = 1, type = 5, value = 0.3466765
     //
     // 
-    // node Streamline[2]: x = 517, y = 349, inputs = 7, label = Streamline
+    // node Streamline[2]: x = 737, y = 350, inputs = 7, label = Streamline
     //
 main_Streamline_2_out_1 = 
     Streamline(
@@ -254,6 +292,14 @@ main_Streamline_2_out_1 =
     main_Streamline_2_in_6,
     main_Streamline_2_in_7
     ) [instance: 2, cache: 1];
+    // 
+    // node Unmark[1]: x = 932, y = 211, inputs = 2, label = Unmark
+    //
+main_Unmark_1_out_1 = 
+    Unmark(
+    main_Compute_1_out_1,
+    main_Unmark_1_in_2
+    ) [instance: 1, cache: 1];
     //
     // decorator Annotate	pos=(418,65) size=100x28 style(Label), value = <NULL>
     // annotation user_begin: 12
@@ -290,6 +336,11 @@ main_AutoGlyph_1_in_7 = NULL;
 main_AutoGlyph_1_out_1 = NULL;
 main_ShowBox_1_out_1 = NULL;
 main_Collect_1_out_1 = NULL;
+main_Mark_1_in_1 = NULL;
+main_Mark_1_in_2 = "positions";
+main_Mark_1_out_1 = NULL;
+main_Compute_1_in_1 = "$0-0.5*$1";
+main_Compute_1_out_1 = NULL;
 macro Image(
         id,
         object,
@@ -606,11 +657,11 @@ main_Image_1_in_1 = "Image_1";
 main_Image_1_in_3 = "X24,,";
 main_Image_1_in_4 = 1;
 main_Image_1_in_5 = [8.5 8.5 8.5];
-main_Image_1_in_6 = [-33.824 27.7139 66.0709];
+main_Image_1_in_6 = [-36.1815 48.872 51.495];
 main_Image_1_in_7 = 39.6524;
 main_Image_1_in_8 = 640;
 main_Image_1_in_9 = 0.751;
-main_Image_1_in_10 = [0.273409 0.95468 -0.117618];
+main_Image_1_in_10 = [0.340733 0.83573 -0.430647];
 main_Image_1_in_11 = NULL;
 main_Image_1_in_12 = 0;
 main_Image_1_in_13 = NULL;
@@ -675,6 +726,15 @@ main_Map_1_in_1 = NULL;
 main_Map_1_in_2 = NULL;
 main_Map_1_in_3 = NULL;
 main_Map_1_in_4 = NULL;
+main_Pick_1_in_1 = "Pick_1";
+main_Pick_1_in_2 = NULL;
+main_Pick_1_in_3 = NULL;
+main_Pick_1_in_4 = NULL;
+main_Pick_1_in_5 = NULL;
+main_Pick_1_in_6 = NULL;
+main_Pick_1_in_7 = NULL;
+main_Pick_1_in_8 = NULL;
+main_Pick_1_in_9 = NULL;
 main_Print_2_in_1 = NULL;
 main_Print_2_in_2 = "rd";
 main_Print_2_in_3 = NULL;
@@ -696,6 +756,7 @@ main_Streamline_2_in_4 = NULL;
 main_Streamline_2_in_5 = NULL;
 main_Streamline_2_in_6 = NULL;
 main_Streamline_2_in_7 = NULL;
+main_Unmark_1_in_2 = NULL;
 Executive("product version 4 4 4");
 $sync
 main();
