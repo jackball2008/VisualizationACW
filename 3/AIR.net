@@ -1,35 +1,35 @@
 //
-// time: Sun Mar 25 00:00:03 2012
+// time: Mon Mar 26 00:13:26 2012
 //
 // version: 3.2.0 (format), 4.4.4 (DX)
 //
 //
 // MODULE main
-// workspace: width = 1008, height = 613
+// workspace: width = 978, height = 726
 // layout: snap = 0, width = 50, height = 50, align = NN
 //
 macro main(
 ) -> (
 ) {
     // 
-    // node AutoColor[1]: x = 737, y = 268, inputs = 10, label = AutoColor
+    // node AutoGlyph[1]: x = 227, y = 169, inputs = 7, label = AutoGlyph
+    // input[2]: defaulting = 1, visible = 1, type = 32, value = "square"
+    // input[3]: defaulting = 1, visible = 1, type = 5, value = .25
+    // input[4]: defaulting = 1, visible = 1, type = 5, value = .50
+    // input[5]: defaulting = 1, visible = 1, type = 5, value = NULL
     //
-main_AutoColor_1_out_1,
-main_AutoColor_1_out_2 = 
-    AutoColor(
-    main_AutoColor_1_in_1,
-    main_AutoColor_1_in_2,
-    main_AutoColor_1_in_3,
-    main_AutoColor_1_in_4,
-    main_AutoColor_1_in_5,
-    main_AutoColor_1_in_6,
-    main_AutoColor_1_in_7,
-    main_AutoColor_1_in_8,
-    main_AutoColor_1_in_9,
-    main_AutoColor_1_in_10
+main_AutoGlyph_1_out_1 = 
+    AutoGlyph(
+    main_AutoGlyph_1_in_1,
+    main_AutoGlyph_1_in_2,
+    main_AutoGlyph_1_in_3,
+    main_AutoGlyph_1_in_4,
+    main_AutoGlyph_1_in_5,
+    main_AutoGlyph_1_in_6,
+    main_AutoGlyph_1_in_7
     ) [instance: 1, cache: 1];
     // 
-    // node Import[1]: x = 55, y = 64, inputs = 6, label = Import
+    // node Import[1]: x = 47, y = 19, inputs = 6, label = Import
     // input[1]: defaulting = 0, visible = 1, type = 32, value = "d:\workspace\VisualizationACW\3\AIR.general"
     // input[2]: defaulting = 0, visible = 1, type = 32, value = "F"
     // input[3]: defaulting = 1, visible = 1, type = 32, value = NULL
@@ -45,31 +45,130 @@ main_Import_1_out_1 =
     main_Import_1_in_6
     ) [instance: 1, cache: 1];
     // 
-    // node Sample[1]: x = 45, y = 217, inputs = 2, label = Sample
-    // input[2]: defaulting = 1, visible = 1, type = 1, value = 300
+    // node Reduce[1]: x = 49, y = 159, inputs = 2, label = Reduce
+    // input[2]: defaulting = 0, visible = 1, type = 16777221, value = { 2.5 }
     //
-main_Sample_1_out_1 = 
-    Sample(
+main_Reduce_1_out_1 = 
+    Reduce(
     main_Import_1_out_1,
-    main_Sample_1_in_2
+    main_Reduce_1_in_2
     ) [instance: 1, cache: 1];
     // 
-    // node AutoGlyph[1]: x = 224, y = 283, inputs = 7, label = AutoGlyph
-    // input[2]: defaulting = 1, visible = 1, type = 32, value = "rocket"
-    // input[3]: defaulting = 1, visible = 1, type = 5, value = NULL
+    // node AutoGlyph[2]: x = 54, y = 268, inputs = 7, label = AutoGlyph
+    // input[2]: defaulting = 1, visible = 1, type = 32, value = "square"
+    // input[3]: defaulting = 1, visible = 1, type = 5, value = .25
+    // input[4]: defaulting = 1, visible = 1, type = 5, value = .50
+    // input[5]: defaulting = 1, visible = 1, type = 5, value = NULL
     //
-main_AutoGlyph_1_out_1 = 
+main_AutoGlyph_2_out_1 = 
     AutoGlyph(
-    main_Sample_1_out_1,
-    main_AutoGlyph_1_in_2,
-    main_AutoGlyph_1_in_3,
-    main_AutoGlyph_1_in_4,
-    main_AutoGlyph_1_in_5,
-    main_AutoGlyph_1_in_6,
-    main_AutoGlyph_1_in_7
+    main_Reduce_1_out_1,
+    main_AutoGlyph_2_in_2,
+    main_AutoGlyph_2_in_3,
+    main_AutoGlyph_2_in_4,
+    main_AutoGlyph_2_in_5,
+    main_AutoGlyph_2_in_6,
+    main_AutoGlyph_2_in_7
+    ) [instance: 2, cache: 1];
+    // 
+    // node Import[2]: x = 367, y = 20, inputs = 6, label = Import
+    // input[1]: defaulting = 0, visible = 1, type = 32, value = "d:\workspace\VisualizationACW\3\AIR.general"
+    // input[2]: defaulting = 0, visible = 1, type = 32, value = "T"
+    //
+main_Import_2_out_1 = 
+    Import(
+    main_Import_2_in_1,
+    main_Import_2_in_2,
+    main_Import_2_in_3,
+    main_Import_2_in_4,
+    main_Import_2_in_5,
+    main_Import_2_in_6
+    ) [instance: 2, cache: 1];
+    // 
+    // node Map[2]: x = 211, y = 369, inputs = 4, label = Map
+    //
+main_Map_2_out_1 = 
+    Map(
+    main_AutoGlyph_2_out_1,
+    main_Import_2_out_1,
+    main_Map_2_in_3,
+    main_Map_2_in_4
+    ) [instance: 2, cache: 1];
+    // 
+    // node Import[3]: x = 602, y = 32, inputs = 6, label = Import
+    // input[1]: defaulting = 0, visible = 1, type = 32, value = "d:\workspace\visualizationacw\3\AIR.general"
+    // input[2]: defaulting = 0, visible = 1, type = 32, value = "P"
+    //
+main_Import_3_out_1 = 
+    Import(
+    main_Import_3_in_1,
+    main_Import_3_in_2,
+    main_Import_3_in_3,
+    main_Import_3_in_4,
+    main_Import_3_in_5,
+    main_Import_3_in_6
+    ) [instance: 3, cache: 1];
+    // 
+    // node Map[3]: x = 337, y = 364, inputs = 4, label = Map
+    //
+main_Map_3_out_1 = 
+    Map(
+    main_Map_2_out_1,
+    main_Import_3_out_1,
+    main_Map_3_in_3,
+    main_Map_3_in_4
+    ) [instance: 3, cache: 1];
+    // 
+    // node Colormap[1]: x = 416, y = 180, inputs = 19, label = Colormap
+    // input[1]: defaulting = 0, visible = 0, type = 16777224, value = { [0.0 0.62105263] [0.23584906 0.61052632] [0.49685535 0.0] [1.0 0.0] }
+    // input[2]: defaulting = 0, visible = 0, type = 16777224, value = { [0.0 1.0] [1.0 1.0] }
+    // input[3]: defaulting = 0, visible = 0, type = 16777224, value = { [0.0 1.0] [1.0 1.0] }
+    // input[4]: defaulting = 0, visible = 0, type = 16777224, value = { [0.0 1.0] [1.0 1.0] }
+    // input[5]: defaulting = 0, visible = 0, type = 32, value = "Colormap_1"
+    // input[7]: defaulting = 1, visible = 0, type = 5, value = -0.306647
+    // input[8]: defaulting = 1, visible = 0, type = 5, value = 1.0
+    // input[9]: defaulting = 1, visible = 0, type = 1, value = 20
+    // input[12]: defaulting = 0, visible = 0, type = 16777221, value = { -0.306647 1.0 }
+    // input[17]: defaulting = 0, visible = 0, type = 5, value = -0.306647
+    // input[18]: defaulting = 0, visible = 0, type = 5, value = 1.0
+    // window: position = (0.2419,0.2012), size = 0.4063x0.5233
+    //
+main_Colormap_1_out_1[cache: 2],
+main_Colormap_1_out_2[cache: 2] = 
+    Colormap(
+    main_Colormap_1_in_1,
+    main_Colormap_1_in_2,
+    main_Colormap_1_in_3,
+    main_Colormap_1_in_4,
+    main_Colormap_1_in_5,
+    main_Import_2_out_1,
+    main_Colormap_1_in_7,
+    main_Colormap_1_in_8,
+    main_Colormap_1_in_9,
+    main_Colormap_1_in_10,
+    main_Colormap_1_in_11,
+    main_Colormap_1_in_12,
+    main_Colormap_1_in_13,
+    main_Colormap_1_in_14,
+    main_Colormap_1_in_15,
+    main_Colormap_1_in_16,
+    main_Colormap_1_in_17,
+    main_Colormap_1_in_18,
+    main_Colormap_1_in_19
     ) [instance: 1, cache: 1];
     // 
-    // node ShowBox[1]: x = 457, y = 447, inputs = 1, label = ShowBox
+    // node Color[1]: x = 478, y = 357, inputs = 5, label = Color
+    //
+main_Color_1_out_1 = 
+    Color(
+    main_Map_3_out_1,
+    main_Colormap_1_out_1,
+    main_Color_1_in_3,
+    main_Color_1_in_4,
+    main_Color_1_in_5
+    ) [instance: 1, cache: 1];
+    // 
+    // node ShowBox[1]: x = 88, y = 450, inputs = 1, label = ShowBox
     //
 main_ShowBox_1_out_1,
 main_ShowBox_1_out_2 = 
@@ -77,12 +176,35 @@ main_ShowBox_1_out_2 =
     main_Import_1_out_1
     ) [instance: 1, cache: 1];
     // 
-    // node Collect[1]: x = 342, y = 509, inputs = 2, label = Collect
+    // node ColorBar[1]: x = 619, y = 307, inputs = 16, label = ColorBar
+    //
+main_ColorBar_1_out_1 = 
+    ColorBar(
+    main_Colormap_1_out_1,
+    main_ColorBar_1_in_2,
+    main_ColorBar_1_in_3,
+    main_ColorBar_1_in_4,
+    main_ColorBar_1_in_5,
+    main_ColorBar_1_in_6,
+    main_ColorBar_1_in_7,
+    main_ColorBar_1_in_8,
+    main_ColorBar_1_in_9,
+    main_ColorBar_1_in_10,
+    main_ColorBar_1_in_11,
+    main_ColorBar_1_in_12,
+    main_ColorBar_1_in_13,
+    main_ColorBar_1_in_14,
+    main_ColorBar_1_in_15,
+    main_ColorBar_1_in_16
+    ) [instance: 1, cache: 1];
+    // 
+    // node Collect[1]: x = 342, y = 509, inputs = 3, label = Collect
     //
 main_Collect_1_out_1 = 
     Collect(
-    main_AutoGlyph_1_out_1,
-    main_ShowBox_1_out_1
+    main_Color_1_out_1,
+    main_ShowBox_1_out_1,
+    main_ColorBar_1_out_1
     ) [instance: 1, cache: 1];
     // 
     // node Mark[1]: x = 871, y = 44, inputs = 2, label = Mark
@@ -94,7 +216,7 @@ main_Mark_1_out_1 =
     main_Mark_1_in_2
     ) [instance: 1, cache: 1];
     // 
-    // node Compute[1]: x = 939, y = 96, inputs = 3, label = Compute
+    // node Compute[1]: x = 886, y = 143, inputs = 3, label = Compute
     // input[1]: defaulting = 0, visible = 0, type = 32, value = "$0-0.5*$1"
     // expression: value = a-0.5*b
     // name[2]: value = a
@@ -107,16 +229,16 @@ main_Compute_1_out_1 =
     main_Mark_1_out_1
     ) [instance: 1, cache: 1];
     // 
-    // node Image[1]: x = 250, y = 551, inputs = 49, label = Image
+    // node Image[1]: x = 333, y = 664, inputs = 49, label = Image
     // input[1]: defaulting = 0, visible = 0, type = 67108863, value = "Image_1"
     // input[4]: defaulting = 0, visible = 0, type = 1, value = 1
     // input[5]: defaulting = 0, visible = 0, type = 8, value = [8.5 8.5 8.5]
-    // input[6]: defaulting = 0, visible = 0, type = 8, value = [-36.1815 48.872 51.495]
+    // input[6]: defaulting = 0, visible = 0, type = 8, value = [-7.26102 35.2419 75.6662]
     // input[7]: defaulting = 0, visible = 0, type = 5, value = 39.6524
     // input[8]: defaulting = 0, visible = 0, type = 1, value = 640
     // input[9]: defaulting = 0, visible = 0, type = 5, value = 0.751
-    // input[10]: defaulting = 0, visible = 0, type = 8, value = [0.340733 0.83573 -0.430647]
-    // input[11]: defaulting = 1, visible = 0, type = 5, value = 29.9999
+    // input[10]: defaulting = 0, visible = 0, type = 8, value = [0.0980189 0.932287 -0.348185]
+    // input[11]: defaulting = 1, visible = 0, type = 5, value = 30.0001
     // input[12]: defaulting = 0, visible = 0, type = 1, value = 0
     // input[14]: defaulting = 0, visible = 0, type = 1, value = 1
     // input[15]: defaulting = 1, visible = 0, type = 32, value = "none"
@@ -127,7 +249,7 @@ main_Compute_1_out_1 =
     // input[29]: defaulting = 0, visible = 0, type = 3, value = 0
     // input[41]: defaulting = 0, visible = 0, type = 32, value = "rotate"
     // depth: value = 24
-    // window: position = (0.4881,0.1047), size = 0.4087x0.6070
+    // window: position = (0.5044,0.0256), size = 0.4087x0.6070
     // internal caching: 1
     //
 main_Image_1_out_1,
@@ -185,115 +307,51 @@ main_Image_1_out_3 =
     main_Image_1_in_49
     ) [instance: 1, cache: 1];
     // 
-    // node Import[2]: x = 298, y = 38, inputs = 6, label = Import
-    // input[1]: defaulting = 0, visible = 1, type = 32, value = "d:\workspace\VisualizationACW\3\AIR.general"
-    // input[2]: defaulting = 0, visible = 1, type = 32, value = "T"
-    //
-main_Import_2_out_1 = 
-    Import(
-    main_Import_2_in_1,
-    main_Import_2_in_2,
-    main_Import_2_in_3,
-    main_Import_2_in_4,
-    main_Import_2_in_5,
-    main_Import_2_in_6
-    ) [instance: 2, cache: 1];
-    // 
-    // node Scalar[1]: x = 242, y = 121, inputs = 11, label = Scalar
-    // input[1]: defaulting = 0, visible = 0, type = 32, value = "Scalar_1"
-    // input[3]: defaulting = 0, visible = 0, type = 5, value = 0.3466765
-    // input[5]: defaulting = 1, visible = 0, type = 5, value = -0.306647
-    // input[6]: defaulting = 1, visible = 0, type = 5, value = 1.0
-    // input[7]: defaulting = 1, visible = 0, type = 5, value = 1.0
-    // input[9]: defaulting = 1, visible = 0, type = 1, value = 2
-    // output[1]: visible = 1, type = 5, value = 0.3466765
-    //
-main_Scalar_1_out_1[cache: 2] = 
-    Scalar(
-    main_Scalar_1_in_1,
-    main_Import_2_out_1,
-    main_Scalar_1_in_3,
-    main_Scalar_1_in_4,
-    main_Scalar_1_in_5,
-    main_Scalar_1_in_6,
-    main_Scalar_1_in_7,
-    main_Scalar_1_in_8,
-    main_Scalar_1_in_9,
-    main_Scalar_1_in_10,
-    main_Scalar_1_in_11
-    ) [instance: 1, cache: 1];
-    // 
-    // node Isosurface[1]: x = 328, y = 203, inputs = 6, label = Isosurface
-    //
-main_Isosurface_1_out_1 = 
-    Isosurface(
-    main_Import_2_out_1,
-    main_Scalar_1_out_1,
-    main_Isosurface_1_in_3,
-    main_Isosurface_1_in_4,
-    main_Isosurface_1_in_5,
-    main_Isosurface_1_in_6
-    ) [instance: 1, cache: 1];
-    // 
-    // node Map[1]: x = 760, y = 183, inputs = 4, label = Map
-    //
-main_Map_1_out_1 = 
-    Map(
-    main_Map_1_in_1,
-    main_Map_1_in_2,
-    main_Map_1_in_3,
-    main_Map_1_in_4
-    ) [instance: 1, cache: 1];
-    // 
-    // node Pick[1]: x = 771, y = 40, inputs = 9, label = Pick_1
-    // input[1]: defaulting = 0, visible = 0, type = 32, value = "Pick_1"
-    //
-main_Pick_1_out_1 = 
-    Pick(
-    main_Pick_1_in_1,
-    main_Pick_1_in_2,
-    main_Pick_1_in_3,
-    main_Pick_1_in_4,
-    main_Pick_1_in_5,
-    main_Pick_1_in_6,
-    main_Pick_1_in_7,
-    main_Pick_1_in_8,
-    main_Pick_1_in_9
-    ) [instance: 1, cache: 1];
-    // 
-    // node Print[2]: x = 761, y = 435, inputs = 3, label = Print
+    // node Print[3]: x = 778, y = 135, inputs = 3, label = Print
     // input[2]: defaulting = 0, visible = 1, type = 32, value = "rd"
     //
     Print(
-    main_Print_2_in_1,
-    main_Print_2_in_2,
-    main_Print_2_in_3
-    ) [instance: 2, cache: 1];
+    main_Print_3_in_1,
+    main_Print_3_in_2,
+    main_Print_3_in_3
+    ) [instance: 3, cache: 1];
     // 
-    // node Scalar[2]: x = 759, y = 115, inputs = 11, label = Scalar
-    // input[1]: defaulting = 0, visible = 0, type = 32, value = "Scalar_2"
-    // input[3]: defaulting = 0, visible = 0, type = 5, value = 0.3466765
-    // input[5]: defaulting = 1, visible = 0, type = 5, value = -0.306647
-    // input[6]: defaulting = 1, visible = 0, type = 5, value = 1.0
-    // input[7]: defaulting = 1, visible = 0, type = 5, value = 1.0
-    // input[9]: defaulting = 1, visible = 0, type = 1, value = 2
-    // output[1]: visible = 1, type = 5, value = 0.3466765
+    // node Probe[1]: x = 793, y = 328, inputs = 0, label = Probe_1
     //
     // 
-    // node Streamline[2]: x = 737, y = 350, inputs = 7, label = Streamline
+    // node Sample[1]: x = 802, y = 231, inputs = 2, label = Sample
+    // input[2]: defaulting = 0, visible = 1, type = 1, value = 1000
     //
-main_Streamline_2_out_1 = 
+main_Sample_1_out_1 = 
+    Sample(
+    main_Sample_1_in_1,
+    main_Sample_1_in_2
+    ) [instance: 1, cache: 1];
+    // 
+    // node Streamline[3]: x = 760, y = 405, inputs = 7, label = Streamline
+    //
+main_Streamline_3_out_1 = 
     Streamline(
-    main_Streamline_2_in_1,
-    main_Streamline_2_in_2,
-    main_Streamline_2_in_3,
-    main_Streamline_2_in_4,
-    main_Streamline_2_in_5,
-    main_Streamline_2_in_6,
-    main_Streamline_2_in_7
-    ) [instance: 2, cache: 1];
+    main_Streamline_3_in_1,
+    main_Streamline_3_in_2,
+    main_Streamline_3_in_3,
+    main_Streamline_3_in_4,
+    main_Streamline_3_in_5,
+    main_Streamline_3_in_6,
+    main_Streamline_3_in_7
+    ) [instance: 3, cache: 1];
     // 
-    // node Unmark[1]: x = 932, y = 211, inputs = 2, label = Unmark
+    // node Tube[1]: x = 930, y = 498, inputs = 4, label = Tube
+    //
+main_Tube_1_out_1 = 
+    Tube(
+    main_Streamline_3_out_1,
+    main_Tube_1_in_2,
+    main_Tube_1_in_3,
+    main_Tube_1_in_4
+    ) [instance: 1, cache: 1];
+    // 
+    // node Unmark[1]: x = 887, y = 230, inputs = 2, label = Unmark
     //
 main_Unmark_1_out_1 = 
     Unmark(
@@ -301,23 +359,30 @@ main_Unmark_1_out_1 =
     main_Unmark_1_in_2
     ) [instance: 1, cache: 1];
     //
-    // decorator Annotate	pos=(418,65) size=100x28 style(Label), value = <NULL>
-    // annotation user_begin: 12
-    // annotation user: Hard to work
+    // decorator Annotate	pos=(459,65) size=77x28 style(Label), value = <NULL>
+    // annotation user_begin: 8
+    // annotation user: Tempture
+    // annotation user_end: <NULL>
+    //
+    // decorator Annotate	pos=(141,56) size=58x28 style(Label), value = <NULL>
+    // annotation user_begin: 6
+    // annotation user: Vector
+    // annotation user_end: <NULL>
+    //
+    // decorator Annotate	pos=(692,62) size=75x28 style(Label), value = <NULL>
+    // annotation user_begin: 8
+    // annotation user: Pressure
     // annotation user_end: <NULL>
 // network: end of macro body
 CacheScene(main_Image_1_in_1, main_Image_1_out_1, main_Image_1_out_2);
 }
-main_AutoColor_1_in_1 = NULL;
-main_AutoColor_1_in_2 = NULL;
-main_AutoColor_1_in_3 = NULL;
-main_AutoColor_1_in_4 = NULL;
-main_AutoColor_1_in_5 = NULL;
-main_AutoColor_1_in_6 = NULL;
-main_AutoColor_1_in_7 = NULL;
-main_AutoColor_1_in_8 = NULL;
-main_AutoColor_1_in_9 = NULL;
-main_AutoColor_1_in_10 = NULL;
+main_AutoGlyph_1_in_1 = NULL;
+main_AutoGlyph_1_in_2 = NULL;
+main_AutoGlyph_1_in_3 = NULL;
+main_AutoGlyph_1_in_4 = NULL;
+main_AutoGlyph_1_in_5 = NULL;
+main_AutoGlyph_1_in_6 = NULL;
+main_AutoGlyph_1_in_7 = NULL;
 main_Import_1_in_1 = "d:\workspace\VisualizationACW\3\AIR.general";
 main_Import_1_in_2 = "F";
 main_Import_1_in_3 = NULL;
@@ -325,16 +390,75 @@ main_Import_1_in_4 = NULL;
 main_Import_1_in_5 = NULL;
 main_Import_1_in_6 = NULL;
 main_Import_1_out_1 = NULL;
-main_Sample_1_in_2 = NULL;
-main_Sample_1_out_1 = NULL;
-main_AutoGlyph_1_in_2 = NULL;
-main_AutoGlyph_1_in_3 = NULL;
-main_AutoGlyph_1_in_4 = NULL;
-main_AutoGlyph_1_in_5 = NULL;
-main_AutoGlyph_1_in_6 = NULL;
-main_AutoGlyph_1_in_7 = NULL;
-main_AutoGlyph_1_out_1 = NULL;
+main_Reduce_1_in_2 = { 2.5 };
+main_Reduce_1_out_1 = NULL;
+main_AutoGlyph_2_in_2 = NULL;
+main_AutoGlyph_2_in_3 = NULL;
+main_AutoGlyph_2_in_4 = NULL;
+main_AutoGlyph_2_in_5 = NULL;
+main_AutoGlyph_2_in_6 = NULL;
+main_AutoGlyph_2_in_7 = NULL;
+main_AutoGlyph_2_out_1 = NULL;
+main_Import_2_in_1 = "d:\workspace\VisualizationACW\3\AIR.general";
+main_Import_2_in_2 = "T";
+main_Import_2_in_3 = NULL;
+main_Import_2_in_4 = NULL;
+main_Import_2_in_5 = NULL;
+main_Import_2_in_6 = NULL;
+main_Import_2_out_1 = NULL;
+main_Map_2_in_3 = NULL;
+main_Map_2_in_4 = NULL;
+main_Map_2_out_1 = NULL;
+main_Import_3_in_1 = "d:\workspace\visualizationacw\3\AIR.general";
+main_Import_3_in_2 = "P";
+main_Import_3_in_3 = NULL;
+main_Import_3_in_4 = NULL;
+main_Import_3_in_5 = NULL;
+main_Import_3_in_6 = NULL;
+main_Import_3_out_1 = NULL;
+main_Map_3_in_3 = NULL;
+main_Map_3_in_4 = NULL;
+main_Map_3_out_1 = NULL;
+main_Colormap_1_in_1 = { [0.0 0.62105263] [0.23584906 0.61052632] [0.49685535 0.0] [1.0 0.0] };
+main_Colormap_1_in_2 = { [0.0 1.0] [1.0 1.0] };
+main_Colormap_1_in_3 = { [0.0 1.0] [1.0 1.0] };
+main_Colormap_1_in_4 = { [0.0 1.0] [1.0 1.0] };
+main_Colormap_1_in_5 = "Colormap_1";
+main_Colormap_1_in_7 = NULL;
+main_Colormap_1_in_8 = NULL;
+main_Colormap_1_in_9 = NULL;
+main_Colormap_1_in_10 = NULL;
+main_Colormap_1_in_11 = NULL;
+main_Colormap_1_in_12 = { -0.306647 1.0 };
+main_Colormap_1_in_13 = NULL;
+main_Colormap_1_in_14 = NULL;
+main_Colormap_1_in_15 = NULL;
+main_Colormap_1_in_16 = NULL;
+main_Colormap_1_in_17 = -0.306647;
+main_Colormap_1_in_18 = 1.0;
+main_Colormap_1_in_19 = NULL;
+main_Colormap_1_out_1 = NULL;
+main_Color_1_in_3 = NULL;
+main_Color_1_in_4 = NULL;
+main_Color_1_in_5 = NULL;
+main_Color_1_out_1 = NULL;
 main_ShowBox_1_out_1 = NULL;
+main_ColorBar_1_in_2 = NULL;
+main_ColorBar_1_in_3 = NULL;
+main_ColorBar_1_in_4 = NULL;
+main_ColorBar_1_in_5 = NULL;
+main_ColorBar_1_in_6 = NULL;
+main_ColorBar_1_in_7 = NULL;
+main_ColorBar_1_in_8 = NULL;
+main_ColorBar_1_in_9 = NULL;
+main_ColorBar_1_in_10 = NULL;
+main_ColorBar_1_in_11 = NULL;
+main_ColorBar_1_in_12 = NULL;
+main_ColorBar_1_in_13 = NULL;
+main_ColorBar_1_in_14 = NULL;
+main_ColorBar_1_in_15 = NULL;
+main_ColorBar_1_in_16 = NULL;
+main_ColorBar_1_out_1 = NULL;
 main_Collect_1_out_1 = NULL;
 main_Mark_1_in_1 = NULL;
 main_Mark_1_in_2 = "positions";
@@ -657,11 +781,11 @@ main_Image_1_in_1 = "Image_1";
 main_Image_1_in_3 = "X24,,";
 main_Image_1_in_4 = 1;
 main_Image_1_in_5 = [8.5 8.5 8.5];
-main_Image_1_in_6 = [-36.1815 48.872 51.495];
+main_Image_1_in_6 = [-7.26102 35.2419 75.6662];
 main_Image_1_in_7 = 39.6524;
 main_Image_1_in_8 = 640;
 main_Image_1_in_9 = 0.751;
-main_Image_1_in_10 = [0.340733 0.83573 -0.430647];
+main_Image_1_in_10 = [0.0980189 0.932287 -0.348185];
 main_Image_1_in_11 = NULL;
 main_Image_1_in_12 = 0;
 main_Image_1_in_13 = NULL;
@@ -700,62 +824,23 @@ main_Image_1_in_46 = NULL;
 main_Image_1_in_47 = NULL;
 main_Image_1_in_48 = NULL;
 main_Image_1_in_49 = NULL;
-main_Import_2_in_1 = "d:\workspace\VisualizationACW\3\AIR.general";
-main_Import_2_in_2 = "T";
-main_Import_2_in_3 = NULL;
-main_Import_2_in_4 = NULL;
-main_Import_2_in_5 = NULL;
-main_Import_2_in_6 = NULL;
-main_Import_2_out_1 = NULL;
-main_Scalar_1_in_1 = "Scalar_1";
-main_Scalar_1_in_3 = 0.3466765;
-main_Scalar_1_in_4 = NULL;
-main_Scalar_1_in_5 = NULL;
-main_Scalar_1_in_6 = NULL;
-main_Scalar_1_in_7 = NULL;
-main_Scalar_1_in_8 = NULL;
-main_Scalar_1_in_9 = NULL;
-main_Scalar_1_in_10 = NULL;
-main_Scalar_1_in_11 = NULL;
-main_Scalar_1_out_1 = 0.3466765;
-main_Isosurface_1_in_3 = NULL;
-main_Isosurface_1_in_4 = NULL;
-main_Isosurface_1_in_5 = NULL;
-main_Isosurface_1_in_6 = NULL;
-main_Map_1_in_1 = NULL;
-main_Map_1_in_2 = NULL;
-main_Map_1_in_3 = NULL;
-main_Map_1_in_4 = NULL;
-main_Pick_1_in_1 = "Pick_1";
-main_Pick_1_in_2 = NULL;
-main_Pick_1_in_3 = NULL;
-main_Pick_1_in_4 = NULL;
-main_Pick_1_in_5 = NULL;
-main_Pick_1_in_6 = NULL;
-main_Pick_1_in_7 = NULL;
-main_Pick_1_in_8 = NULL;
-main_Pick_1_in_9 = NULL;
-main_Print_2_in_1 = NULL;
-main_Print_2_in_2 = "rd";
-main_Print_2_in_3 = NULL;
-main_Scalar_2_in_1 = "Scalar_2";
-main_Scalar_2_in_2 = NULL;
-main_Scalar_2_in_3 = 0.3466765;
-main_Scalar_2_in_4 = NULL;
-main_Scalar_2_in_5 = NULL;
-main_Scalar_2_in_6 = NULL;
-main_Scalar_2_in_7 = NULL;
-main_Scalar_2_in_8 = NULL;
-main_Scalar_2_in_9 = NULL;
-main_Scalar_2_in_10 = NULL;
-main_Scalar_2_in_11 = NULL;
-main_Streamline_2_in_1 = NULL;
-main_Streamline_2_in_2 = NULL;
-main_Streamline_2_in_3 = NULL;
-main_Streamline_2_in_4 = NULL;
-main_Streamline_2_in_5 = NULL;
-main_Streamline_2_in_6 = NULL;
-main_Streamline_2_in_7 = NULL;
+main_Print_3_in_1 = NULL;
+main_Print_3_in_2 = "rd";
+main_Print_3_in_3 = NULL;
+main_Probe_1_out_1 = NULL;
+main_Sample_1_in_1 = NULL;
+main_Sample_1_in_2 = 1000;
+main_Streamline_3_in_1 = NULL;
+main_Streamline_3_in_2 = NULL;
+main_Streamline_3_in_3 = NULL;
+main_Streamline_3_in_4 = NULL;
+main_Streamline_3_in_5 = NULL;
+main_Streamline_3_in_6 = NULL;
+main_Streamline_3_in_7 = NULL;
+main_Streamline_3_out_1 = NULL;
+main_Tube_1_in_2 = NULL;
+main_Tube_1_in_3 = NULL;
+main_Tube_1_in_4 = NULL;
 main_Unmark_1_in_2 = NULL;
 Executive("product version 4 4 4");
 $sync
