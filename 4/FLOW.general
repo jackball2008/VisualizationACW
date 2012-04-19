@@ -1,13 +1,13 @@
-file = E:/workspace/VisualizationACW/4/flow.data
+file = e:\workspace\VisualizationACW\4\flow.data
 grid = 40 x 20 x 10
-format = msb ieee
-interleaving = record
+format = ascii
+interleaving = field
 majority = column
 header = lines 5
-field = x, y, z, u, v, w
-structure = scalar, scalar, scalar, scalar, scalar, scalar
-type = signed int, signed int, signed int, signed int, signed int, signed int
-dependency = positions, positions, positions, positions, positions, positions
+field = position, vector
+structure = scalar, 3-vector
+type = float, float
+dependency = positions, positions
 positions = regular, regular, regular, 0, 1, 0, 1, 0, 1
 
 end

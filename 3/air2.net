@@ -1,20 +1,20 @@
 //
-// time: Thu Apr 19 12:18:33 2012
+// time: Thu Apr 19 12:55:03 2012
 //
 // version: 3.2.0 (format), 4.4.4 (DX)
 //
 //
 // MODULE main
-// workspace: width = 612, height = 615
+// workspace: width = 465, height = 577
 // layout: snap = 0, width = 50, height = 50, align = NN
 //
 macro main(
 ) -> (
 ) {
     // 
-    // node Import[1]: x = 38, y = 46, inputs = 6, label = Import
-    // input[1]: defaulting = 0, visible = 1, type = 32, value = "e:\workspace\visualizationacw\4\FLOW.general"
-    // input[2]: defaulting = 0, visible = 1, type = 16777248, value = {"x" ,"y" ,"z"}
+    // node Import[1]: x = 266, y = 33, inputs = 6, label = Import
+    // input[1]: defaulting = 0, visible = 1, type = 32, value = "e:\workspace\VisualizationACW\3\AIR.general"
+    // input[2]: defaulting = 1, visible = 1, type = 32, value = "T"
     //
 main_Import_1_out_1 = 
     Import(
@@ -26,12 +26,34 @@ main_Import_1_out_1 =
     main_Import_1_in_6
     ) [instance: 1, cache: 1];
     // 
-    // node AutoColor[1]: x = 45, y = 282, inputs = 10, label = AutoColor
+    // node Select[2]: x = 272, y = 179, inputs = 3, label = Select
+    // input[2]: defaulting = 0, visible = 1, type = 32, value = "T"
+    //
+main_Select_2_out_1 = 
+    Select(
+    main_Import_1_out_1,
+    main_Select_2_in_2,
+    main_Select_2_in_3
+    ) [instance: 2, cache: 1];
+    // 
+    // node Isosurface[1]: x = 272, y = 340, inputs = 6, label = Isosurface
+    //
+main_Isosurface_1_out_1 = 
+    Isosurface(
+    main_Select_2_out_1,
+    main_Isosurface_1_in_2,
+    main_Isosurface_1_in_3,
+    main_Isosurface_1_in_4,
+    main_Isosurface_1_in_5,
+    main_Isosurface_1_in_6
+    ) [instance: 1, cache: 1];
+    // 
+    // node AutoColor[1]: x = 335, y = 416, inputs = 10, label = AutoColor
     //
 main_AutoColor_1_out_1,
 main_AutoColor_1_out_2 = 
     AutoColor(
-    main_Import_1_out_1,
+    main_Isosurface_1_out_1,
     main_AutoColor_1_in_2,
     main_AutoColor_1_in_3,
     main_AutoColor_1_in_4,
@@ -43,58 +65,16 @@ main_AutoColor_1_out_2 =
     main_AutoColor_1_in_10
     ) [instance: 1, cache: 1];
     // 
-    // node Import[2]: x = 431, y = 64, inputs = 6, label = Import
-    // input[1]: defaulting = 0, visible = 1, type = 32, value = "e:\workspace\visualizationacw\4\FLOW.general"
-    // input[2]: defaulting = 0, visible = 1, type = 16777248, value = {"u","v","w"}
-    //
-main_Import_2_out_1 = 
-    Import(
-    main_Import_2_in_1,
-    main_Import_2_in_2,
-    main_Import_2_in_3,
-    main_Import_2_in_4,
-    main_Import_2_in_5,
-    main_Import_2_in_6
-    ) [instance: 2, cache: 1];
-    // 
-    // node ShowBox[1]: x = 542, y = 331, inputs = 1, label = ShowBox
-    //
-main_ShowBox_1_out_1,
-main_ShowBox_1_out_2 = 
-    ShowBox(
-    main_Import_2_out_1
-    ) [instance: 1, cache: 1];
-    // 
-    // node Collect[1]: x = 189, y = 462, inputs = 2, label = Collect
-    //
-main_Collect_1_out_1 = 
-    Collect(
-    main_AutoColor_1_out_1,
-    main_ShowBox_1_out_1
-    ) [instance: 1, cache: 1];
-    // 
-    // node Construct[1]: x = 365, y = 153, inputs = 4, label = Construct
-    // input[2]: defaulting = 1, visible = 1, type = 16777224, value = NULL
-    // input[3]: defaulting = 1, visible = 1, type = 1, value = NULL
-    //
-main_Construct_1_out_1 = 
-    Construct(
-    main_Construct_1_in_1,
-    main_Construct_1_in_2,
-    main_Construct_1_in_3,
-    main_Construct_1_in_4
-    ) [instance: 1, cache: 1];
-    // 
-    // node Image[1]: x = 169, y = 553, inputs = 49, label = Image
+    // node Image[1]: x = 264, y = 515, inputs = 49, label = Image
     // input[1]: defaulting = 0, visible = 0, type = 67108863, value = "Image_1"
     // input[4]: defaulting = 0, visible = 0, type = 1, value = 1
-    // input[5]: defaulting = 0, visible = 0, type = 8, value = [19.5 9.5 4.5]
-    // input[6]: defaulting = 0, visible = 0, type = 8, value = [80.8237 -61.5191 64.4275]
-    // input[7]: defaulting = 0, visible = 0, type = 5, value = 59.6651
-    // input[8]: defaulting = 0, visible = 0, type = 1, value = 544
-    // input[9]: defaulting = 0, visible = 0, type = 5, value = 0.74
-    // input[10]: defaulting = 0, visible = 0, type = 8, value = [-0.119566 0.577947 0.807268]
-    // input[11]: defaulting = 1, visible = 0, type = 5, value = 30.0003
+    // input[5]: defaulting = 0, visible = 0, type = 8, value = [8.5 8.5 8.5]
+    // input[6]: defaulting = 0, visible = 0, type = 8, value = [-50.1986 -11.0018 -32.1085]
+    // input[7]: defaulting = 0, visible = 0, type = 5, value = 39.6524
+    // input[8]: defaulting = 0, visible = 0, type = 1, value = 640
+    // input[9]: defaulting = 0, visible = 0, type = 5, value = 0.751
+    // input[10]: defaulting = 0, visible = 0, type = 8, value = [0.515524 0.188757 -0.835826]
+    // input[11]: defaulting = 1, visible = 0, type = 5, value = 29.9999
     // input[12]: defaulting = 0, visible = 0, type = 1, value = 0
     // input[14]: defaulting = 0, visible = 0, type = 1, value = 1
     // input[15]: defaulting = 1, visible = 0, type = 32, value = "none"
@@ -105,7 +85,7 @@ main_Construct_1_out_1 =
     // input[29]: defaulting = 1, visible = 0, type = 3, value = 0
     // input[41]: defaulting = 0, visible = 0, type = 32, value = "rotate"
     // depth: value = 24
-    // window: position = (0.5403,0.2253), size = 0.4085x0.6099
+    // window: position = (0.5059,0.1099), size = 0.4788x0.7170
     // internal caching: 1
     //
 main_Image_1_out_1,
@@ -113,7 +93,7 @@ main_Image_1_out_2,
 main_Image_1_out_3 = 
     Image(
     main_Image_1_in_1,
-    main_Collect_1_out_1,
+    main_AutoColor_1_out_1,
     main_Image_1_in_3,
     main_Image_1_in_4,
     main_Image_1_in_5,
@@ -163,46 +143,42 @@ main_Image_1_out_3 =
     main_Image_1_in_49
     ) [instance: 1, cache: 1];
     // 
-    // node ShowPositions[1]: x = 139, y = 196, inputs = 2, label = ShowPositions
+    // node Select[1]: x = 94, y = 230, inputs = 3, label = Select
     //
-main_ShowPositions_1_out_1 = 
-    ShowPositions(
-    main_ShowPositions_1_in_1,
-    main_ShowPositions_1_in_2
+main_Select_1_out_1 = 
+    Select(
+    main_Select_1_in_1,
+    main_Select_1_in_2,
+    main_Select_1_in_3
     ) [instance: 1, cache: 1];
     // 
-    // node Map[1]: x = 318, y = 259, inputs = 4, label = Map
+    // node Select[3]: x = 416, y = 242, inputs = 3, label = Select
     //
-main_Map_1_out_1 = 
-    Map(
-    main_ShowPositions_1_out_1,
-    main_Map_1_in_2,
-    main_Map_1_in_3,
-    main_Map_1_in_4
-    ) [instance: 1, cache: 1];
-    // 
-    // node Streamline[1]: x = 354, y = 362, inputs = 7, label = Streamline
-    //
-main_Streamline_1_out_1 = 
-    Streamline(
-    main_Streamline_1_in_1,
-    main_Streamline_1_in_2,
-    main_Streamline_1_in_3,
-    main_Streamline_1_in_4,
-    main_Streamline_1_in_5,
-    main_Streamline_1_in_6,
-    main_Streamline_1_in_7
-    ) [instance: 1, cache: 1];
+main_Select_3_out_1 = 
+    Select(
+    main_Select_3_in_1,
+    main_Select_3_in_2,
+    main_Select_3_in_3
+    ) [instance: 3, cache: 1];
 // network: end of macro body
 CacheScene(main_Image_1_in_1, main_Image_1_out_1, main_Image_1_out_2);
 }
-main_Import_1_in_1 = "e:\workspace\visualizationacw\4\FLOW.general";
-main_Import_1_in_2 = {"x" ,"y" ,"z"};
+main_Import_1_in_1 = "e:\workspace\VisualizationACW\3\AIR.general";
+main_Import_1_in_2 = NULL;
 main_Import_1_in_3 = NULL;
 main_Import_1_in_4 = NULL;
 main_Import_1_in_5 = NULL;
 main_Import_1_in_6 = NULL;
 main_Import_1_out_1 = NULL;
+main_Select_2_in_2 = "T";
+main_Select_2_in_3 = NULL;
+main_Select_2_out_1 = NULL;
+main_Isosurface_1_in_2 = NULL;
+main_Isosurface_1_in_3 = NULL;
+main_Isosurface_1_in_4 = NULL;
+main_Isosurface_1_in_5 = NULL;
+main_Isosurface_1_in_6 = NULL;
+main_Isosurface_1_out_1 = NULL;
 main_AutoColor_1_in_2 = NULL;
 main_AutoColor_1_in_3 = NULL;
 main_AutoColor_1_in_4 = NULL;
@@ -213,19 +189,6 @@ main_AutoColor_1_in_8 = NULL;
 main_AutoColor_1_in_9 = NULL;
 main_AutoColor_1_in_10 = NULL;
 main_AutoColor_1_out_1 = NULL;
-main_Import_2_in_1 = "e:\workspace\visualizationacw\4\FLOW.general";
-main_Import_2_in_2 = {"u","v","w"};
-main_Import_2_in_3 = NULL;
-main_Import_2_in_4 = NULL;
-main_Import_2_in_5 = NULL;
-main_Import_2_in_6 = NULL;
-main_Import_2_out_1 = NULL;
-main_ShowBox_1_out_1 = NULL;
-main_Collect_1_out_1 = NULL;
-main_Construct_1_in_1 = NULL;
-main_Construct_1_in_2 = NULL;
-main_Construct_1_in_3 = NULL;
-main_Construct_1_in_4 = NULL;
 macro Image(
         id,
         object,
@@ -541,12 +504,12 @@ macro Image(
 main_Image_1_in_1 = "Image_1";
 main_Image_1_in_3 = "X24,,";
 main_Image_1_in_4 = 1;
-main_Image_1_in_5 = [19.5 9.5 4.5];
-main_Image_1_in_6 = [80.8237 -61.5191 64.4275];
-main_Image_1_in_7 = 59.6651;
-main_Image_1_in_8 = 544;
-main_Image_1_in_9 = 0.74;
-main_Image_1_in_10 = [-0.119566 0.577947 0.807268];
+main_Image_1_in_5 = [8.5 8.5 8.5];
+main_Image_1_in_6 = [-50.1986 -11.0018 -32.1085];
+main_Image_1_in_7 = 39.6524;
+main_Image_1_in_8 = 640;
+main_Image_1_in_9 = 0.751;
+main_Image_1_in_10 = [0.515524 0.188757 -0.835826];
 main_Image_1_in_11 = NULL;
 main_Image_1_in_12 = 0;
 main_Image_1_in_13 = NULL;
@@ -585,19 +548,12 @@ main_Image_1_in_46 = NULL;
 main_Image_1_in_47 = NULL;
 main_Image_1_in_48 = NULL;
 main_Image_1_in_49 = NULL;
-main_ShowPositions_1_in_1 = NULL;
-main_ShowPositions_1_in_2 = NULL;
-main_ShowPositions_1_out_1 = NULL;
-main_Map_1_in_2 = NULL;
-main_Map_1_in_3 = NULL;
-main_Map_1_in_4 = NULL;
-main_Streamline_1_in_1 = NULL;
-main_Streamline_1_in_2 = NULL;
-main_Streamline_1_in_3 = NULL;
-main_Streamline_1_in_4 = NULL;
-main_Streamline_1_in_5 = NULL;
-main_Streamline_1_in_6 = NULL;
-main_Streamline_1_in_7 = NULL;
+main_Select_1_in_1 = NULL;
+main_Select_1_in_2 = NULL;
+main_Select_1_in_3 = NULL;
+main_Select_3_in_1 = NULL;
+main_Select_3_in_2 = NULL;
+main_Select_3_in_3 = NULL;
 Executive("product version 4 4 4");
 $sync
 main();

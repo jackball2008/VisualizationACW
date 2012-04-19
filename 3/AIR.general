@@ -1,7 +1,7 @@
-file = E:/workspace/VisualizationACW/3/dglazing.data
+file = E:\workspace\VisualizationACW\3\dglazing.data
 grid = 18 x 18 x 18
 format = ascii
-interleaving = record-vector
+interleaving = field
 majority = column
 header = lines 3
 field = F, T, P
