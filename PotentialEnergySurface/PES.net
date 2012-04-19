@@ -1,5 +1,5 @@
 //
-// time: Fri Mar 23 10:39:51 2012
+// time: Thu Apr 19 11:32:06 2012
 //
 // version: 3.2.0 (format), 4.4.4 (DX)
 //
@@ -29,7 +29,7 @@ main_Caption_1_out_1 =
     main_Caption_1_in_9
     ) [instance: 1, cache: 1];
     // 
-    // node Import[1]: x = 298, y = 114, inputs = 6, label = Import
+    // node Import[1]: x = 270, y = 51, inputs = 6, label = Import
     // input[1]: defaulting = 0, visible = 1, type = 32, value = "e:\workspace\visualizationacw\potentialenergysurface\PES.general"
     //
 main_Import_1_out_1 = 
@@ -186,11 +186,11 @@ main_Collect_1_out_1 =
     // input[1]: defaulting = 0, visible = 0, type = 67108863, value = "Image_1"
     // input[4]: defaulting = 0, visible = 0, type = 1, value = 1
     // input[5]: defaulting = 0, visible = 0, type = 8, value = [35 35 0]
-    // input[6]: defaulting = 0, visible = 0, type = 8, value = [103.644 -176.573 111.392]
+    // input[6]: defaulting = 0, visible = 0, type = 8, value = [99.0318 -79.7046 211.249]
     // input[7]: defaulting = 0, visible = 0, type = 5, value = 133.313
     // input[8]: defaulting = 0, visible = 0, type = 1, value = 640
     // input[9]: defaulting = 0, visible = 0, type = 5, value = 0.751
-    // input[10]: defaulting = 0, visible = 0, type = 8, value = [-0.15367 0.42084 0.894024]
+    // input[10]: defaulting = 0, visible = 0, type = 8, value = [-0.288591 0.802017 0.522957]
     // input[11]: defaulting = 1, visible = 0, type = 5, value = 30.0002
     // input[12]: defaulting = 0, visible = 0, type = 1, value = 0
     // input[14]: defaulting = 0, visible = 0, type = 1, value = 1
@@ -202,7 +202,7 @@ main_Collect_1_out_1 =
     // input[29]: defaulting = 1, visible = 0, type = 3, value = 0
     // input[41]: defaulting = 0, visible = 0, type = 32, value = "rotate"
     // depth: value = 24
-    // window: position = (0.2269,0.0879), size = 0.4788x0.7170
+    // window: position = (0.1471,0.1525), size = 0.4788x0.7170
     // internal caching: 1
     //
 main_Image_1_out_1,
@@ -660,11 +660,11 @@ main_Image_1_in_1 = "Image_1";
 main_Image_1_in_3 = "X24,,";
 main_Image_1_in_4 = 1;
 main_Image_1_in_5 = [35 35 0];
-main_Image_1_in_6 = [103.644 -176.573 111.392];
+main_Image_1_in_6 = [99.0318 -79.7046 211.249];
 main_Image_1_in_7 = 133.313;
 main_Image_1_in_8 = 640;
 main_Image_1_in_9 = 0.751;
-main_Image_1_in_10 = [-0.15367 0.42084 0.894024];
+main_Image_1_in_10 = [-0.288591 0.802017 0.522957];
 main_Image_1_in_11 = NULL;
 main_Image_1_in_12 = 0;
 main_Image_1_in_13 = NULL;

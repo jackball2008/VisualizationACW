@@ -1,19 +1,19 @@
 //
-// time: Mon Mar 26 23:54:50 2012
+// time: Thu Apr 19 11:43:53 2012
 //
 // version: 3.2.0 (format), 4.4.4 (DX)
 //
 //
 // MODULE main
-// workspace: width = 522, height = 498
+// workspace: width = 612, height = 498
 // layout: snap = 0, width = 50, height = 50, align = NN
 //
 macro main(
 ) -> (
 ) {
     // 
-    // node Import[1]: x = 38, y = 45, inputs = 6, label = Import
-    // input[1]: defaulting = 0, visible = 1, type = 32, value = "d:\workspace\visualizationacw\4\FLOW.general"
+    // node Import[1]: x = 38, y = 46, inputs = 6, label = Import
+    // input[1]: defaulting = 0, visible = 1, type = 32, value = "e:\workspace\visualizationacw\4\FLOW.general"
     // input[2]: defaulting = 0, visible = 1, type = 16777248, value = {"x" ,"y" ,"z"}
     //
 main_Import_1_out_1 = 
@@ -51,8 +51,20 @@ main_AutoColor_1_out_2 =
     main_AutoColor_1_in_10
     ) [instance: 1, cache: 1];
     // 
-    // node Import[2]: x = 375, y = 74, inputs = 6, label = Import
-    // input[1]: defaulting = 0, visible = 1, type = 32, value = "d:\workspace\visualizationacw\4\FLOW.general"
+    // node Construct[1]: x = 365, y = 153, inputs = 4, label = Construct
+    // input[2]: defaulting = 1, visible = 1, type = 16777224, value = NULL
+    // input[3]: defaulting = 1, visible = 1, type = 1, value = NULL
+    //
+main_Construct_1_out_1 = 
+    Construct(
+    main_Construct_1_in_1,
+    main_Construct_1_in_2,
+    main_Construct_1_in_3,
+    main_Construct_1_in_4
+    ) [instance: 1, cache: 1];
+    // 
+    // node Import[2]: x = 431, y = 64, inputs = 6, label = Import
+    // input[1]: defaulting = 0, visible = 1, type = 32, value = "e:\workspace\visualizationacw\4\FLOW.general"
     // input[2]: defaulting = 0, visible = 1, type = 16777248, value = {"u","v","w"}
     //
 main_Import_2_out_1 = 
@@ -65,28 +77,24 @@ main_Import_2_out_1 =
     main_Import_2_in_6
     ) [instance: 2, cache: 1];
     // 
-    // node Construct[1]: x = 392, y = 168, inputs = 4, label = Construct
-    // input[2]: defaulting = 1, visible = 1, type = 16777224, value = NULL
-    // input[3]: defaulting = 1, visible = 1, type = 1, value = NULL
+    // node ShowBox[1]: x = 542, y = 331, inputs = 1, label = ShowBox
     //
-main_Construct_1_out_1 = 
-    Construct(
-    main_Import_2_out_1,
-    main_Construct_1_in_2,
-    main_Construct_1_in_3,
-    main_Construct_1_in_4
+main_ShowBox_1_out_1,
+main_ShowBox_1_out_2 = 
+    ShowBox(
+    main_Import_2_out_1
     ) [instance: 1, cache: 1];
     // 
     // node Image[1]: x = 43, y = 436, inputs = 49, label = Image
-    // input[1]: defaulting = 0, visible = 0, type = 32, value = "Image_1"
+    // input[1]: defaulting = 0, visible = 0, type = 67108863, value = "Image_1"
     // input[4]: defaulting = 0, visible = 0, type = 1, value = 1
     // input[5]: defaulting = 0, visible = 0, type = 8, value = [19.5 9.5 4.5]
-    // input[6]: defaulting = 0, visible = 0, type = 8, value = [60.0696 60.2498 94.911]
+    // input[6]: defaulting = 0, visible = 0, type = 8, value = [-10.3204 34.5088 108.811]
     // input[7]: defaulting = 0, visible = 0, type = 5, value = 59.6651
-    // input[8]: defaulting = 0, visible = 0, type = 1, value = 640
-    // input[9]: defaulting = 0, visible = 0, type = 5, value = 0.75
-    // input[10]: defaulting = 0, visible = 0, type = 8, value = [-0.150412 0.889373 -0.431732]
-    // input[11]: defaulting = 1, visible = 0, type = 5, value = 30.0003
+    // input[8]: defaulting = 0, visible = 0, type = 1, value = 544
+    // input[9]: defaulting = 0, visible = 0, type = 5, value = 0.74
+    // input[10]: defaulting = 0, visible = 0, type = 8, value = [-0.326311 0.893821 -0.307581]
+    // input[11]: defaulting = 1, visible = 0, type = 5, value = 30.0004
     // input[12]: defaulting = 0, visible = 0, type = 1, value = 0
     // input[14]: defaulting = 0, visible = 0, type = 1, value = 1
     // input[15]: defaulting = 1, visible = 0, type = 32, value = "none"
@@ -97,7 +105,7 @@ main_Construct_1_out_1 =
     // input[29]: defaulting = 1, visible = 0, type = 3, value = 0
     // input[41]: defaulting = 0, visible = 0, type = 32, value = "rotate"
     // depth: value = 24
-    // window: position = (0.5550,0.1953), size = 0.4087x0.6070
+    // window: position = (0.5403,0.2253), size = 0.4085x0.6099
     // internal caching: 1
     //
 main_Image_1_out_1,
@@ -105,7 +113,7 @@ main_Image_1_out_2,
 main_Image_1_out_3 = 
     Image(
     main_Image_1_in_1,
-    main_Image_1_in_2,
+    main_ShowBox_1_out_1,
     main_Image_1_in_3,
     main_Image_1_in_4,
     main_Image_1_in_5,
@@ -180,7 +188,7 @@ main_Streamline_1_out_1 =
 // network: end of macro body
 CacheScene(main_Image_1_in_1, main_Image_1_out_1, main_Image_1_out_2);
 }
-main_Import_1_in_1 = "d:\workspace\visualizationacw\4\FLOW.general";
+main_Import_1_in_1 = "e:\workspace\visualizationacw\4\FLOW.general";
 main_Import_1_in_2 = {"x" ,"y" ,"z"};
 main_Import_1_in_3 = NULL;
 main_Import_1_in_4 = NULL;
@@ -198,16 +206,18 @@ main_AutoColor_1_in_7 = NULL;
 main_AutoColor_1_in_8 = NULL;
 main_AutoColor_1_in_9 = NULL;
 main_AutoColor_1_in_10 = NULL;
-main_Import_2_in_1 = "d:\workspace\visualizationacw\4\FLOW.general";
+main_Construct_1_in_1 = NULL;
+main_Construct_1_in_2 = NULL;
+main_Construct_1_in_3 = NULL;
+main_Construct_1_in_4 = NULL;
+main_Import_2_in_1 = "e:\workspace\visualizationacw\4\FLOW.general";
 main_Import_2_in_2 = {"u","v","w"};
 main_Import_2_in_3 = NULL;
 main_Import_2_in_4 = NULL;
 main_Import_2_in_5 = NULL;
 main_Import_2_in_6 = NULL;
 main_Import_2_out_1 = NULL;
-main_Construct_1_in_2 = NULL;
-main_Construct_1_in_3 = NULL;
-main_Construct_1_in_4 = NULL;
+main_ShowBox_1_out_1 = NULL;
 macro Image(
         id,
         object,
@@ -521,15 +531,14 @@ macro Image(
         RECformat) [instance: 2, cache: 1];
 }
 main_Image_1_in_1 = "Image_1";
-main_Image_1_in_2 = NULL;
 main_Image_1_in_3 = "X24,,";
 main_Image_1_in_4 = 1;
 main_Image_1_in_5 = [19.5 9.5 4.5];
-main_Image_1_in_6 = [60.0696 60.2498 94.911];
+main_Image_1_in_6 = [-10.3204 34.5088 108.811];
 main_Image_1_in_7 = 59.6651;
-main_Image_1_in_8 = 640;
-main_Image_1_in_9 = 0.75;
-main_Image_1_in_10 = [-0.150412 0.889373 -0.431732];
+main_Image_1_in_8 = 544;
+main_Image_1_in_9 = 0.74;
+main_Image_1_in_10 = [-0.326311 0.893821 -0.307581];
 main_Image_1_in_11 = NULL;
 main_Image_1_in_12 = 0;
 main_Image_1_in_13 = NULL;
