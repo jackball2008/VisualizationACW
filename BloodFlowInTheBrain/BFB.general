@@ -1,4 +1,4 @@
-file = e:/workspace/VisualizationACW/BloodFlowInTheBrain/brain.data
+file = c:/workspace/visualizationacw/BloodFlowInTheBrain/brain.data
 grid = 72 x 82
 format = ascii
 interleaving = record
