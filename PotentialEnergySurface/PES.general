@@ -1,4 +1,4 @@
-file = E:/Workspace/VisualizationACW/PotentialEnergySurface/potenh3.data
+file = c:/Workspace/visualizationacw/PotentialEnergySurface/potenh3.data
 grid = 71 x 71
 format = ascii
 interleaving = record

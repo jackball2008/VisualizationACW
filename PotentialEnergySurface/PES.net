@@ -1,5 +1,5 @@
 //
-// time: Thu Apr 19 11:32:06 2012
+// time: Tue Apr 24 10:58:23 2012
 //
 // version: 3.2.0 (format), 4.4.4 (DX)
 //
@@ -30,7 +30,7 @@ main_Caption_1_out_1 =
     ) [instance: 1, cache: 1];
     // 
     // node Import[1]: x = 270, y = 51, inputs = 6, label = Import
-    // input[1]: defaulting = 0, visible = 1, type = 32, value = "e:\workspace\visualizationacw\potentialenergysurface\PES.general"
+    // input[1]: defaulting = 0, visible = 1, type = 32, value = "c:\workspace\visualizationacw\potentialenergysurface\PES.general"
     //
 main_Import_1_out_1 = 
     Import(
@@ -54,7 +54,7 @@ main_Import_1_out_1 =
     // input[12]: defaulting = 0, visible = 0, type = 16777221, value = { -22162.0 15935.0 }
     // input[17]: defaulting = 0, visible = 0, type = 5, value = -22162.0
     // input[18]: defaulting = 0, visible = 0, type = 5, value = 15935.0
-    // window: position = (0.0900,0.2692), size = 0.4758x0.6181
+    // window: position = (0.0903,0.2698), size = 0.4757x0.6186
     //
 main_Colormap_1_out_1[cache: 2],
 main_Colormap_1_out_2[cache: 2] = 
@@ -99,6 +99,21 @@ main_RubberSheet_1_out_1 =
     main_RubberSheet_1_in_2,
     main_RubberSheet_1_in_3,
     main_RubberSheet_1_in_4
+    ) [instance: 1, cache: 1];
+    // 
+    // node Shade[1]: x = 155, y = 530, inputs = 8, label = Shade
+    // input[4]: defaulting = 0, visible = 0, type = 5, value = 0.0
+    //
+main_Shade_1_out_1 = 
+    Shade(
+    main_RubberSheet_1_out_1,
+    main_Shade_1_in_2,
+    main_Shade_1_in_3,
+    main_Shade_1_in_4,
+    main_Shade_1_in_5,
+    main_Shade_1_in_6,
+    main_Shade_1_in_7,
+    main_Shade_1_in_8
     ) [instance: 1, cache: 1];
     // 
     // node Scalar[1]: x = 504, y = 126, inputs = 11, label = Scalar
@@ -176,7 +191,7 @@ main_ColorBar_1_out_1 =
     //
 main_Collect_1_out_1 = 
     Collect(
-    main_RubberSheet_1_out_1,
+    main_Shade_1_out_1,
     main_Color_1_out_1,
     main_Caption_1_out_1,
     main_ColorBar_1_out_1
@@ -186,12 +201,12 @@ main_Collect_1_out_1 =
     // input[1]: defaulting = 0, visible = 0, type = 67108863, value = "Image_1"
     // input[4]: defaulting = 0, visible = 0, type = 1, value = 1
     // input[5]: defaulting = 0, visible = 0, type = 8, value = [35 35 0]
-    // input[6]: defaulting = 0, visible = 0, type = 8, value = [99.0318 -79.7046 211.249]
+    // input[6]: defaulting = 0, visible = 0, type = 8, value = [102.016 -131.398 172.347]
     // input[7]: defaulting = 0, visible = 0, type = 5, value = 133.313
-    // input[8]: defaulting = 0, visible = 0, type = 1, value = 640
-    // input[9]: defaulting = 0, visible = 0, type = 5, value = 0.751
-    // input[10]: defaulting = 0, visible = 0, type = 8, value = [-0.288591 0.802017 0.522957]
-    // input[11]: defaulting = 1, visible = 0, type = 5, value = 30.0002
+    // input[8]: defaulting = 0, visible = 0, type = 1, value = 675
+    // input[9]: defaulting = 0, visible = 0, type = 5, value = 0.853
+    // input[10]: defaulting = 0, visible = 0, type = 8, value = [-0.272031 0.637261 0.721039]
+    // input[11]: defaulting = 1, visible = 0, type = 5, value = 30.0003
     // input[12]: defaulting = 0, visible = 0, type = 1, value = 0
     // input[14]: defaulting = 0, visible = 0, type = 1, value = 1
     // input[15]: defaulting = 1, visible = 0, type = 32, value = "none"
@@ -199,10 +214,10 @@ main_Collect_1_out_1 =
     // input[17]: defaulting = 1, visible = 0, type = 1, value = 1
     // input[18]: defaulting = 1, visible = 0, type = 1, value = 1
     // input[19]: defaulting = 0, visible = 0, type = 1, value = 0
-    // input[29]: defaulting = 1, visible = 0, type = 3, value = 0
+    // input[29]: defaulting = 0, visible = 0, type = 3, value = 1
     // input[41]: defaulting = 0, visible = 0, type = 32, value = "rotate"
     // depth: value = 24
-    // window: position = (0.1471,0.1525), size = 0.4788x0.7170
+    // window: position = (0.4333,0.1802), size = 0.4785x0.7174
     // internal caching: 1
     //
 main_Image_1_out_1,
@@ -272,7 +287,7 @@ main_Caption_1_in_7 = "area";
 main_Caption_1_in_8 = NULL;
 main_Caption_1_in_9 = NULL;
 main_Caption_1_out_1 = NULL;
-main_Import_1_in_1 = "e:\workspace\visualizationacw\potentialenergysurface\PES.general";
+main_Import_1_in_1 = "c:\workspace\visualizationacw\potentialenergysurface\PES.general";
 main_Import_1_in_2 = NULL;
 main_Import_1_in_3 = NULL;
 main_Import_1_in_4 = NULL;
@@ -306,6 +321,14 @@ main_RubberSheet_1_in_2 = NULL;
 main_RubberSheet_1_in_3 = NULL;
 main_RubberSheet_1_in_4 = NULL;
 main_RubberSheet_1_out_1 = NULL;
+main_Shade_1_in_2 = NULL;
+main_Shade_1_in_3 = NULL;
+main_Shade_1_in_4 = 0.0;
+main_Shade_1_in_5 = NULL;
+main_Shade_1_in_6 = NULL;
+main_Shade_1_in_7 = NULL;
+main_Shade_1_in_8 = NULL;
+main_Shade_1_out_1 = NULL;
 main_Scalar_1_in_1 = "Scalar_1";
 main_Scalar_1_in_3 = -16162.0 ;
 main_Scalar_1_in_4 = NULL;
@@ -660,11 +683,11 @@ main_Image_1_in_1 = "Image_1";
 main_Image_1_in_3 = "X24,,";
 main_Image_1_in_4 = 1;
 main_Image_1_in_5 = [35 35 0];
-main_Image_1_in_6 = [99.0318 -79.7046 211.249];
+main_Image_1_in_6 = [102.016 -131.398 172.347];
 main_Image_1_in_7 = 133.313;
-main_Image_1_in_8 = 640;
-main_Image_1_in_9 = 0.751;
-main_Image_1_in_10 = [-0.288591 0.802017 0.522957];
+main_Image_1_in_8 = 675;
+main_Image_1_in_9 = 0.853;
+main_Image_1_in_10 = [-0.272031 0.637261 0.721039];
 main_Image_1_in_11 = NULL;
 main_Image_1_in_12 = 0;
 main_Image_1_in_13 = NULL;
@@ -682,7 +705,7 @@ main_Image_1_in_25 = NULL;
 main_Image_1_in_26 = NULL;
 main_Image_1_in_27 = NULL;
 main_Image_1_in_28 = NULL;
-main_Image_1_in_29 = NULL;
+main_Image_1_in_29 = 1;
 main_Image_1_in_30 = NULL;
 main_Image_1_in_31 = NULL;
 main_Image_1_in_32 = NULL;
