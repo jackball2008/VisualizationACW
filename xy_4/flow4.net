@@ -1,11 +1,11 @@
 //
-// time: Sun Apr 22 11:09:39 2012
+// time: Tue Apr 24 15:35:48 2012
 //
 // version: 3.2.0 (format), 4.4.4 (DX)
 //
 //
 // MODULE main
-// workspace: width = 642, height = 610
+// workspace: width = 795, height = 610
 // layout: snap = 0, width = 50, height = 50, align = NN
 //
 macro main(
@@ -104,8 +104,24 @@ main_AutoGlyph_1_out_1 =
     main_AutoGlyph_1_in_7
     ) [instance: 1, cache: 1];
     // 
+    // node Caption[1]: x = 402, y = 409, inputs = 9, label = Caption
+    // input[1]: defaulting = 0, visible = 1, type = 32, value = "Flow in a volume measured at The Deep"
+    //
+main_Caption_1_out_1 = 
+    Caption(
+    main_Caption_1_in_1,
+    main_Caption_1_in_2,
+    main_Caption_1_in_3,
+    main_Caption_1_in_4,
+    main_Caption_1_in_5,
+    main_Caption_1_in_6,
+    main_Caption_1_in_7,
+    main_Caption_1_in_8,
+    main_Caption_1_in_9
+    ) [instance: 1, cache: 1];
+    // 
     // node Colormap[1]: x = 568, y = 205, inputs = 19, label = Colormap
-    // input[1]: defaulting = 0, visible = 0, type = 16777224, value = { [0.0 0.66666] [0.25 0.66666] [0.25 0.44444] [0.40566038 0.44210526] [0.40566038 0.22105263] [0.56289308 0.21052632] [0.56289308 0.0] [1.0 5.5511151e-017] }
+    // input[1]: defaulting = 0, visible = 0, type = 16777224, value = { [0.0 0.66666] [0.25 0.66666] [0.25 0.44444] [0.40566038 0.44210526] [0.40566038 0.22105263] [0.53144654 0.21052632] [0.53144654 0.0] [1.0 5.5511151e-017] }
     // input[2]: defaulting = 0, visible = 0, type = 16777224, value = { [0.0 1.0] [1.0 1.0] }
     // input[3]: defaulting = 0, visible = 0, type = 16777224, value = { [0.0 1.0] [1.0 1.0] }
     // input[4]: defaulting = 0, visible = 0, type = 16777224, value = { [0.0 1.0] [1.0 1.0] }
@@ -116,7 +132,7 @@ main_AutoGlyph_1_out_1 =
     // input[12]: defaulting = 0, visible = 0, type = 16777221, value = { 0.0085507371 563.75946 }
     // input[17]: defaulting = 0, visible = 0, type = 5, value = 0.0085507371
     // input[18]: defaulting = 0, visible = 0, type = 5, value = 563.75946
-    // window: position = (0.3799,0.1442), size = 0.4758x0.6181
+    // window: position = (0.2972,0.2005), size = 0.4758x0.6181
     //
 main_Colormap_1_out_1[cache: 2],
 main_Colormap_1_out_2[cache: 2] = 
@@ -142,36 +158,59 @@ main_Colormap_1_out_2[cache: 2] =
     main_Colormap_1_in_19
     ) [instance: 1, cache: 1];
     // 
-    // node Color[2]: x = 257, y = 301, inputs = 5, label = Color
+    // node Color[2]: x = 264, y = 340, inputs = 5, label = Color
     //
 main_Color_2_out_1 = 
     Color(
     main_AutoGlyph_1_out_1,
     main_Colormap_1_out_1,
-    main_Color_2_in_3,
+    main_Colormap_1_out_2,
     main_Color_2_in_4,
     main_Color_2_in_5
     ) [instance: 2, cache: 1];
     // 
-    // node Collect[1]: x = 216, y = 462, inputs = 3, label = Collect
+    // node ColorBar[1]: x = 675, y = 325, inputs = 16, label = ColorBar
+    //
+main_ColorBar_1_out_1 = 
+    ColorBar(
+    main_Colormap_1_out_1,
+    main_ColorBar_1_in_2,
+    main_ColorBar_1_in_3,
+    main_ColorBar_1_in_4,
+    main_ColorBar_1_in_5,
+    main_ColorBar_1_in_6,
+    main_ColorBar_1_in_7,
+    main_ColorBar_1_in_8,
+    main_ColorBar_1_in_9,
+    main_ColorBar_1_in_10,
+    main_ColorBar_1_in_11,
+    main_ColorBar_1_in_12,
+    main_ColorBar_1_in_13,
+    main_ColorBar_1_in_14,
+    main_ColorBar_1_in_15,
+    main_ColorBar_1_in_16
+    ) [instance: 1, cache: 1];
+    // 
+    // node Collect[1]: x = 216, y = 462, inputs = 4, label = Collect
     //
 main_Collect_1_out_1 = 
     Collect(
     main_AutoColor_1_out_1,
     main_Color_2_out_1,
-    main_Collect_1_in_3
+    main_Caption_1_out_1,
+    main_ColorBar_1_out_1
     ) [instance: 1, cache: 1];
     // 
     // node Image[1]: x = 247, y = 548, inputs = 49, label = Image
     // input[1]: defaulting = 0, visible = 0, type = 67108863, value = "Image_1"
     // input[4]: defaulting = 0, visible = 0, type = 1, value = 1
     // input[5]: defaulting = 0, visible = 0, type = 8, value = [19.5 10.2254 4.5]
-    // input[6]: defaulting = 0, visible = 0, type = 8, value = [36.6549 31.9269 114.166]
+    // input[6]: defaulting = 0, visible = 0, type = 8, value = [6.48818 -44.3031 102.727]
     // input[7]: defaulting = 0, visible = 0, type = 5, value = 60.6095
     // input[8]: defaulting = 0, visible = 0, type = 1, value = 640
     // input[9]: defaulting = 0, visible = 0, type = 5, value = 0.749
-    // input[10]: defaulting = 0, visible = 0, type = 8, value = [0.190757 0.956853 -0.219189]
-    // input[11]: defaulting = 1, visible = 0, type = 5, value = 29.9994
+    // input[10]: defaulting = 0, visible = 0, type = 8, value = [0.0196126 0.873043 0.487248]
+    // input[11]: defaulting = 1, visible = 0, type = 5, value = 30.0002
     // input[12]: defaulting = 0, visible = 0, type = 1, value = 0
     // input[14]: defaulting = 0, visible = 0, type = 1, value = 1
     // input[15]: defaulting = 1, visible = 0, type = 32, value = "none"
@@ -182,7 +221,7 @@ main_Collect_1_out_1 =
     // input[29]: defaulting = 0, visible = 0, type = 3, value = 1
     // input[41]: defaulting = 0, visible = 0, type = 32, value = "rotate"
     // depth: value = 24
-    // window: position = (0.0081,0.0014), size = 0.4788x0.7157
+    // window: position = (0.3397,0.1387), size = 0.4788x0.7157
     // internal caching: 1
     //
 main_Image_1_out_1,
@@ -239,40 +278,6 @@ main_Image_1_out_3 =
     main_Image_1_in_48,
     main_Image_1_in_49
     ) [instance: 1, cache: 1];
-    // 
-    // node Selector[1]: x = 6, y = 431, inputs = 7, label = Selector
-    // input[1]: defaulting = 0, visible = 0, type = 32, value = "Selector_1"
-    // input[2]: defaulting = 1, visible = 0, type = 32, value = "on" 
-    // input[3]: defaulting = 1, visible = 0, type = 29, value = 1 
-    // input[4]: defaulting = 1, visible = 1, type = 16777248, value = { "on" "off" }
-    // input[5]: defaulting = 1, visible = 0, type = 16777245, value = { 1 0 }
-    // output[1]: visible = 1, type = 29, value = 1 
-    // output[2]: visible = 1, type = 32, value = "on" 
-    //
-    // 
-    // node Shade[1]: x = 346, y = 366, inputs = 8, label = Shade
-    // input[4]: defaulting = 0, visible = 0, type = 5, value = 0.0
-    //
-main_Shade_1_out_1 = 
-    Shade(
-    main_Shade_1_in_1,
-    main_Shade_1_in_2,
-    main_Shade_1_in_3,
-    main_Shade_1_in_4,
-    main_Shade_1_in_5,
-    main_Shade_1_in_6,
-    main_Shade_1_in_7,
-    main_Shade_1_in_8
-    ) [instance: 1, cache: 1];
-    // 
-    // node Switch[1]: x = 87, y = 422, inputs = 3, label = Switch
-    //
-main_Switch_1_out_1 = 
-    Switch(
-    main_Selector_1_out_1,
-    main_Switch_1_in_2,
-    main_Switch_1_in_3
-    ) [instance: 1, cache: 1];
 // network: end of macro body
 CacheScene(main_Image_1_in_1, main_Image_1_out_1, main_Image_1_out_2);
 }
@@ -315,7 +320,17 @@ main_AutoGlyph_1_in_5 = NULL;
 main_AutoGlyph_1_in_6 = NULL;
 main_AutoGlyph_1_in_7 = NULL;
 main_AutoGlyph_1_out_1 = NULL;
-main_Colormap_1_in_1 = { [0.0 0.66666] [0.25 0.66666] [0.25 0.44444] [0.40566038 0.44210526] [0.40566038 0.22105263] [0.56289308 0.21052632] [0.56289308 0.0] [1.0 5.5511151e-017] };
+main_Caption_1_in_1 = "Flow in a volume measured at The Deep";
+main_Caption_1_in_2 = NULL;
+main_Caption_1_in_3 = NULL;
+main_Caption_1_in_4 = NULL;
+main_Caption_1_in_5 = NULL;
+main_Caption_1_in_6 = NULL;
+main_Caption_1_in_7 = NULL;
+main_Caption_1_in_8 = NULL;
+main_Caption_1_in_9 = NULL;
+main_Caption_1_out_1 = NULL;
+main_Colormap_1_in_1 = { [0.0 0.66666] [0.25 0.66666] [0.25 0.44444] [0.40566038 0.44210526] [0.40566038 0.22105263] [0.53144654 0.21052632] [0.53144654 0.0] [1.0 5.5511151e-017] };
 main_Colormap_1_in_2 = { [0.0 1.0] [1.0 1.0] };
 main_Colormap_1_in_3 = { [0.0 1.0] [1.0 1.0] };
 main_Colormap_1_in_4 = { [0.0 1.0] [1.0 1.0] };
@@ -334,11 +349,26 @@ main_Colormap_1_in_17 = 0.0085507371;
 main_Colormap_1_in_18 = 563.75946;
 main_Colormap_1_in_19 = NULL;
 main_Colormap_1_out_1 = NULL;
-main_Color_2_in_3 = NULL;
+main_Colormap_1_out_2 = NULL;
 main_Color_2_in_4 = NULL;
 main_Color_2_in_5 = NULL;
 main_Color_2_out_1 = NULL;
-main_Collect_1_in_3 = NULL;
+main_ColorBar_1_in_2 = NULL;
+main_ColorBar_1_in_3 = NULL;
+main_ColorBar_1_in_4 = NULL;
+main_ColorBar_1_in_5 = NULL;
+main_ColorBar_1_in_6 = NULL;
+main_ColorBar_1_in_7 = NULL;
+main_ColorBar_1_in_8 = NULL;
+main_ColorBar_1_in_9 = NULL;
+main_ColorBar_1_in_10 = NULL;
+main_ColorBar_1_in_11 = NULL;
+main_ColorBar_1_in_12 = NULL;
+main_ColorBar_1_in_13 = NULL;
+main_ColorBar_1_in_14 = NULL;
+main_ColorBar_1_in_15 = NULL;
+main_ColorBar_1_in_16 = NULL;
+main_ColorBar_1_out_1 = NULL;
 main_Collect_1_out_1 = NULL;
 macro Image(
         id,
@@ -656,11 +686,11 @@ main_Image_1_in_1 = "Image_1";
 main_Image_1_in_3 = "X24,,";
 main_Image_1_in_4 = 1;
 main_Image_1_in_5 = [19.5 10.2254 4.5];
-main_Image_1_in_6 = [36.6549 31.9269 114.166];
+main_Image_1_in_6 = [6.48818 -44.3031 102.727];
 main_Image_1_in_7 = 60.6095;
 main_Image_1_in_8 = 640;
 main_Image_1_in_9 = 0.749;
-main_Image_1_in_10 = [0.190757 0.956853 -0.219189];
+main_Image_1_in_10 = [0.0196126 0.873043 0.487248];
 main_Image_1_in_11 = NULL;
 main_Image_1_in_12 = 0;
 main_Image_1_in_13 = NULL;
@@ -699,24 +729,6 @@ main_Image_1_in_46 = NULL;
 main_Image_1_in_47 = NULL;
 main_Image_1_in_48 = NULL;
 main_Image_1_in_49 = NULL;
-main_Selector_1_in_1 = "Selector_1";
-main_Selector_1_in_2 = NULL;
-main_Selector_1_in_3 = NULL;
-main_Selector_1_in_4 = NULL;
-main_Selector_1_in_5 = NULL;
-main_Selector_1_in_6 = NULL;
-main_Selector_1_in_7 = NULL;
-main_Selector_1_out_1 = 1 ;
-main_Shade_1_in_1 = NULL;
-main_Shade_1_in_2 = NULL;
-main_Shade_1_in_3 = NULL;
-main_Shade_1_in_4 = 0.0;
-main_Shade_1_in_5 = NULL;
-main_Shade_1_in_6 = NULL;
-main_Shade_1_in_7 = NULL;
-main_Shade_1_in_8 = NULL;
-main_Switch_1_in_2 = NULL;
-main_Switch_1_in_3 = NULL;
 Executive("product version 4 4 4");
 $sync
 main();
